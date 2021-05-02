@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bell 1 pitch + 5-001.wav-338b665432e0297e80c4605fe97e89ce.sample"
+
+[deps]
+
+source_file="res://render/bell 1 pitch + 5-001.wav"
+dest_files=[ "res://.import/bell 1 pitch + 5-001.wav-338b665432e0297e80c4605fe97e89ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

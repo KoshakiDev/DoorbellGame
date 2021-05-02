@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bell 1 pitch + 3.ogg-df05b61a687eeb552b990c4a140062e4.oggstr"
+
+[deps]
+
+source_file="res://render/bell 1 pitch + 3.ogg"
+dest_files=[ "res://.import/bell 1 pitch + 3.ogg-df05b61a687eeb552b990c4a140062e4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

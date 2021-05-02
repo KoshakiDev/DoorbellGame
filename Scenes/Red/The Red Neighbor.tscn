@@ -1,0 +1,273 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://render/bell 2 + EQ.wav" type="AudioStream" id=1]
+[ext_resource path="res://Doorbell Assets/Red/Red Door.png" type="Texture" id=2]
+[ext_resource path="res://Doorbell Assets/Red/Hand Red.png" type="Texture" id=3]
+[ext_resource path="res://Doorbell Assets/Red/Doorbell Red.png" type="Texture" id=4]
+[ext_resource path="res://Doorbell Assets/Red/Red Neighbor Together.png" type="Texture" id=5]
+[ext_resource path="res://Doorbell Assets/Red/Surprise_.png" type="Texture" id=6]
+[ext_resource path="res://Doorbell Assets/Xanthos Ware.png" type="Texture" id=7]
+[ext_resource path="res://render/hello.wav" type="AudioStream" id=8]
+[ext_resource path="res://Doorbell Assets/Mouth Open.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Red/Red Neighbor.gd" type="Script" id=10]
+[ext_resource path="res://render/winner.wav" type="AudioStream" id=11]
+[ext_resource path="res://wheaton capitals.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=4]
+size = 41
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "doorClose"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Opened:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MouthOpen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Surpirse:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Hand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "doorOpen"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Opened:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MouthOpen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Surpirse:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Surpirse:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 0.000212536, 0.000488282, 0.00240458, 0.000622344 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.3, 1 ), Vector2( 1, 1 ), Vector2( 1.3, 1 ) ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("BellSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Hand:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "playNeighbor"
+}, {
+"args": [  ],
+"method": "winnerSound"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.2
+step = 0.05
+tracks/0/type = "audio"
+tracks/0/path = NodePath("BellSound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -31, 79 ), Vector2( -160, 79 ), Vector2( -31, 79 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "playBell"
+} ]
+}
+
+[node name="Red Neighbor" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Closed" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Opened" type="Sprite" parent="."]
+visible = false
+position = Vector2( -28, 0 )
+texture = ExtResource( 5 )
+
+[node name="Doorbell" type="Sprite" parent="."]
+position = Vector2( -284, 55 )
+texture = ExtResource( 4 )
+
+[node name="Hand" type="Sprite" parent="."]
+position = Vector2( -31, 79 )
+texture = ExtResource( 3 )
+
+[node name="Xanthos Ware" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 0.721569, 0.129412, 1 )
+position = Vector2( 740.376, 34.7761 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 178.119
+margin_top = -254.137
+margin_right = 371.119
+margin_bottom = -204.137
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.0627451, 0.00392157, 0.00392157, 1 )
+text = "Xanthos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouthOpen" type="Sprite" parent="."]
+visible = false
+position = Vector2( -11, 108 )
+texture = ExtResource( 9 )
+
+[node name="Surpirse" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -13.0513 )
+scale = Vector2( 1.3, 1 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/doorClose = SubResource( 1 )
+anims/doorOpen = SubResource( 2 )
+anims/pressBellRed = SubResource( 3 )
+
+[node name="BellSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="NeighborSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="WinnerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

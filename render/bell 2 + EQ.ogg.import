@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bell 2 + EQ.ogg-103ca85496f7da8b2e9edf99dedf6e57.oggstr"
+
+[deps]
+
+source_file="res://render/bell 2 + EQ.ogg"
+dest_files=[ "res://.import/bell 2 + EQ.ogg-103ca85496f7da8b2e9edf99dedf6e57.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

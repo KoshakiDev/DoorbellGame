@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Doorbell Assets/UI/UI.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI.gd" type="Script" id=2]
+[ext_resource path="res://wheaton capitals.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Doorbell Assets/UI Red/UI Filled.png" type="Texture" id=4]
+[ext_resource path="res://Doorbell Assets/UI Blue/UI blue filled.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Winnings Right" type="Label" parent="."]
+margin_left = 1021.0
+margin_top = 55.0
+margin_right = 1107.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 1 )
+text = "99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Winnings Left" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 55.0
+margin_right = 111.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 1 )
+text = "99"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinProgressUnder" type="TextureProgress" parent="."]
+margin_left = 354.0
+margin_top = 37.5
+margin_right = 598.0
+margin_bottom = 162.5
+rect_scale = Vector2( -1, 1 )
+max_value = 20.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinProgressUnder2" type="TextureProgress" parent="."]
+margin_left = 778.0
+margin_top = 37.5
+margin_right = 1022.0
+margin_bottom = 162.5
+max_value = 20.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinProgress Right" type="TextureProgress" parent="."]
+margin_left = 789.339
+margin_top = 46.5
+margin_right = 1033.34
+margin_bottom = 171.5
+max_value = 20.0
+texture_progress = ExtResource( 5 )
+fill_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinProgress Left" type="TextureProgress" parent="."]
+margin_left = 343.661
+margin_top = 47.5
+margin_right = 587.661
+margin_bottom = 172.5
+rect_scale = Vector2( -1, 1 )
+max_value = 20.0
+texture_progress = ExtResource( 4 )
+fill_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

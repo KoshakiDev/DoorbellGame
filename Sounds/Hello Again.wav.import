@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hello Again.wav-5e87d3bcbf930637a68e93a5abfd5346.sample"
+
+[deps]
+
+source_file="res://Sounds/Hello Again.wav"
+dest_files=[ "res://.import/Hello Again.wav-5e87d3bcbf930637a68e93a5abfd5346.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,166 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Red/The Red Neighbor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://wheaton capitals.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Miscellanous/crt_material.tres" type="Material" id=4]
+[ext_resource path="res://Doorbell Assets/Wall.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Blue/The Blue Neighbor.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Back"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sceneMove"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 0.225313, 0.210224 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+margin_left = -182.634
+margin_top = -54.5447
+margin_right = 1329.37
+margin_bottom = 1025.46
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Blue Neighbor" parent="CanvasLayer" instance=ExtResource( 7 )]
+position = Vector2( 806.023, 423.924 )
+
+[node name="Red Neighbor" parent="CanvasLayer" instance=ExtResource( 2 )]
+position = Vector2( 342.178, 423.924 )
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="Menu" type="Label" parent="CanvasLayer"]
+margin_left = 481.526
+margin_top = -9.53674e-07
+margin_right = 542.526
+margin_bottom = 43.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 1 )
+text = "Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TV Static" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource( 4 )
+margin_right = 1132.0
+margin_bottom = 849.0
+rect_pivot_offset = Vector2( 327.623, 518.265 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Press D" type="Label" parent="CanvasLayer"]
+margin_left = 25.0
+margin_top = 280.0
+margin_right = 77.0
+margin_bottom = 323.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Press
+D!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Press K" type="Label" parent="CanvasLayer"]
+margin_left = 1020.0
+margin_top = 280.0
+margin_right = 1072.0
+margin_bottom = 323.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Press
+k!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 1132.0
+margin_bottom = 849.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu Button" type="Button" parent="CanvasLayer"]
+margin_left = 503.0
+margin_top = 36.0951
+margin_right = 574.0
+margin_bottom = 62.0951
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade Animation" type="AnimationPlayer" parent="."]
+anims/Back = SubResource( 4 )
+anims/Fade = SubResource( 5 )
+[connection signal="pressed" from="CanvasLayer/Menu Button" to="." method="_on_Menu_Button_pressed"]
